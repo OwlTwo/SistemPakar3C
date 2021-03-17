@@ -1,19 +1,17 @@
-# kecerdasanbuatan
-#Load Library OS untuk clear screen
 import os
 
 
-print("|\t\tSelamat Datang di Aplikasi Sistem Pakar\t\t |")             #sistesm pakar forwardchain 
-print("|\tUntuk Menentukan Spesifikasi Personal Komputer \t |")         #membuat sistem pilihan untuk memnetukan harga dan sbuah spesifikasi dari sebuah komputer
-print("|Sebagai Pengambil Keputusan Dalam Pembelian Komputer|")
+print("\t\tSelamat Datang toko komuter\t\t ")
+print("\tUntuk Menentukan Spesifikasi Personal Komputer \t ")
+print("Sebagai Pengambil Keputusan Dalam Pembelian Komputer")
 
 
-nama=input("Masukan Nama Anda : ")              #akan memulai eksekusi daari input
+nama=input("Masukan Nama Anda : ")
 pilihan=input("\nHi, "+nama+". Apakah Anda Mau Membeli Personal Komputer? (y/n) : ")
 
 os.system("clear")
 
-while pilihan == "y":                                                   #pada pilihan sudah dibuatkan ketentuan y="y" ketika akan memilih dari variable
+while pilihan == "y":
   print("\nKebutuhan/Kriteria yang diinginkan (DATA 1)\n")
   print("\ta.	Dana yang di sediakan < 3 Jt")
   print("\tb.	Dana yang di sediakan  3-5 Jt")
@@ -30,7 +28,7 @@ while pilihan == "y":                                                   #pada pi
 
   beli=input("Masukan Kebutuhan/Kriteria yang anda inginkan : ")
 
-  if beli == "a,d,g,h,i,j" :                                                #bentuk pilihan yang disediakn berupa kode abjak
+  if beli == "a,d,g,h,i,j" :
     print("\nPaket Ekonomis 1 dengan harga Rp. 2.450.000\n")
     print("Dengan Spesifikasi Seperti Berikut :\n")
     print("\ta.	Gigabyte GA8VM800 PMD")
@@ -44,7 +42,7 @@ while pilihan == "y":                                                   #pada pi
     print("\ti.	Speaker Simbadda CST 6000")
     print("\tj.	Modem Prolink Internal\n")
 
-  elif beli == "a,d":                                                   #dan pilihan yang dibuatkan memlauli kode abjaka akan menampilkan hasil jika jika kode yang kita ketik akan terpenuhi
+  elif beli == "a,d":
     print("\nPaket Ekonomis 2 dengan harga Rp. 2.550.000\n")
     print("Dengan Spesifikasi Seperti Berikut :\n")
     print("\ta.	Asus P5PE-VM")
@@ -84,18 +82,19 @@ while pilihan == "y":                                                   #pada pi
     print("\tj.	Modem Prolink Internal\n")
 
 
-  else :                                        #ketika memilih kode yang tidak ada maka akan menampikan pilihan else yang belum masuk dalam nilai kategori
+
+  else :
     print("Kombinasi Kebutuhan/Kriteria yang anda masukan\nbelum terdaftar pada perpustkaan pengetahuan sistem")
 
   print("+----------------------------------------------------+")
   pilihan=input("\nHi, "+nama+". Apakah Anda Mau Membeli Personal Komputer, Lagi? (y/n) : ")
 
-  if pilihan=="y":            #ketika selesai memilih maka akan langsung menuju penutup diaman nilai akan langsung masuk ketika mengkuti variable yang tersedia
+  if pilihan=="y":
     os.system("clear")
-    print("|\t\tSelamat Datang di Aplikasi Sistem Pakar\t\t |")             
-    print("|\tUntuk Menentukan Spesifikasi Personal Komputer \t |")        
-    print("|Sebagai Pengambil Keputusan Dalam Pembelian Komputer|")
+    print("\t\tSelamat Datang toko komuter\t\t ")
+    print("\tUntuk Menentukan Spesifikasi Personal Komputer \t ")
+    print("Sebagai Pengambil Keputusan Dalam Pembelian Komputer")
   
   else :
-    print("Terima Kasih")
-    print("Sudah Menggunakan Sistem ini")
+    print("\n+ Terima Kasih Telah datang di toko kami")
+
