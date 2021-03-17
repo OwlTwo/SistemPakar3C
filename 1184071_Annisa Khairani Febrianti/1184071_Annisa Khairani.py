@@ -1,37 +1,28 @@
-# kecerdasanbuatan
-Modul Praktikum Kecerdasan Buatan
-Nama : Annisa Khairani Febrianti
-NPM : 1184071
-Kelas : D4 TI 3C
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 17 09:43:34 2021
+Created on Wed Mar 17 11:31:07 2021
 
 @author: ASUS
 """
 
 #%%Contoh 1 FORWARD CHAINING
 global is_changed
-#mendefinisikan variabel secara global
 is_changed = True
-#mendefinisikan variabel yang bernilai benar
 facts = [["plant","mango"],["eating","mango"],["seed","sprouts"]]
 
 def assert_fact(fact):
-#mendefinisikan fungsi assert-fact
     global facts
-#mendefinisikan global secara facts
     global is_changed
-#mendefinisikan variabel secara global
+
     if not fact in facts:
 
         facts += [fact]
         is_changed = True
-#mendefinisikan variabel yang bernilai benar
+
 while is_changed:
-#perintah untuk mengulang pada variabel
+
     is_changed = False
-#mendefinisikan variabel yang bernilai salah
+
     for A1 in facts:
         if A1[0] == "seed":
             assert_fact(["plant",A1[1]])
@@ -41,29 +32,29 @@ while is_changed:
             assert_fact(["human",A1[1]])
 
 print(facts)
-#untuk melihat hasil
+
 #%%Contoh 1 BACKWARD CHAINING
 global is_changed
-#mendefinisikan variabel secara global
+
 is_changed = True
-#mendefinisikan variabel yang bernilai benar
+
 facts = [["plant","mango"],["eating","mango"],["seed","sprouts"]]
 
 def assert_fact(fact):
-#mendefinisikan fungsi assert-fact
+
     global facts
-#mendefinisikan global secara facts
+
     global is_changed
-#mendefinisikan variabel secara global
+
     if not fact in facts:
         facts += [fact]
         is_changed = True
-#mendefinisikan variabel yang bernilai benar
+
 
 while is_changed:
-#perintah untuk mengulang pada variabel
+
     is_changed = False
-#mendefinisikan variabel yang bernilai salah
+
     for A1 in facts:
         if A1[0] == "seed":
             assert_fact(["plant",A1[1]])
@@ -73,7 +64,7 @@ while is_changed:
             assert_fact(["human",A1[1]])
 
 print(facts)
-#untuk melihat hasil
+
 #%% Contoh 3
 from collections import OrderedDict
 

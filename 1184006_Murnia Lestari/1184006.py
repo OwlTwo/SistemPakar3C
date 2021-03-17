@@ -1,37 +1,24 @@
-# kecerdasanbuatan
-Modul Praktikum Kecerdasan Buatan
-Nama : Annisa Khairani Febrianti
-NPM : 1184071
-Kelas : D4 TI 3C
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 17 09:43:34 2021
+Created on Wed Mar 17 06:10:01 2021
 
-@author: ASUS
+@author: ACER
 """
-
 #%%Contoh 1 FORWARD CHAINING
 global is_changed
-#mendefinisikan variabel secara global
+
 is_changed = True
-#mendefinisikan variabel yang bernilai benar
 facts = [["plant","mango"],["eating","mango"],["seed","sprouts"]]
 
 def assert_fact(fact):
-#mendefinisikan fungsi assert-fact
     global facts
-#mendefinisikan global secara facts
     global is_changed
-#mendefinisikan variabel secara global
     if not fact in facts:
-
         facts += [fact]
         is_changed = True
-#mendefinisikan variabel yang bernilai benar
+
 while is_changed:
-#perintah untuk mengulang pada variabel
     is_changed = False
-#mendefinisikan variabel yang bernilai salah
     for A1 in facts:
         if A1[0] == "seed":
             assert_fact(["plant",A1[1]])
@@ -41,29 +28,21 @@ while is_changed:
             assert_fact(["human",A1[1]])
 
 print(facts)
-#untuk melihat hasil
-#%%Contoh 1 BACKWARD CHAINING
+#%%Contoh 2 BACKWARD CHAINING
 global is_changed
-#mendefinisikan variabel secara global
+
 is_changed = True
-#mendefinisikan variabel yang bernilai benar
 facts = [["plant","mango"],["eating","mango"],["seed","sprouts"]]
 
 def assert_fact(fact):
-#mendefinisikan fungsi assert-fact
     global facts
-#mendefinisikan global secara facts
     global is_changed
-#mendefinisikan variabel secara global
     if not fact in facts:
         facts += [fact]
         is_changed = True
-#mendefinisikan variabel yang bernilai benar
 
 while is_changed:
-#perintah untuk mengulang pada variabel
     is_changed = False
-#mendefinisikan variabel yang bernilai salah
     for A1 in facts:
         if A1[0] == "seed":
             assert_fact(["plant",A1[1]])
@@ -73,14 +52,13 @@ while is_changed:
             assert_fact(["human",A1[1]])
 
 print(facts)
-#untuk melihat hasil
 #%% Contoh 3
 from collections import OrderedDict
 
 
 class Variable:
     
-    def _init_(self, value, truth, root):
+    def __init__(self, value, truth, root):
         self.value = value
         self.truth = truth
         self.root = root
@@ -97,15 +75,15 @@ class Variable:
     def set_truth(self, truth):
         self.truth = truth
     
-    def _str_(self):
+    def __str__(self):
         return "{ value = " + self.value + ", truth = " + str(self.truth) + ", root = " + str(self.root) + " }"
     
-    def _repr_(self):
+    def __repr__(self):
         return str(self)
     
 class Rule:
     
-    def _init_(self, antecedent, consequent):
+    def __init__(self, antecedent, consequent):
         self.antecedent = antecedent
         self.consequent = consequent
         
@@ -115,10 +93,10 @@ class Rule:
     def get_consequent(self):
         return self.consequent
     
-    def _str_(self):
+    def __str__(self):
         return str(self.antecedent) + " -> " + str(self.consequent)
     
-    def _repr_(self):
+    def __repr__(self):
         return str(self)
     
     
@@ -385,7 +363,7 @@ def get_diff(a, b):
             
     return unique
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     
     print("\n\t\tHello! I'm Halal-bot, and I'm smarter than you.", end='\n\n')
     
@@ -503,7 +481,7 @@ if _name_ == "_main_":
                     print("\t" + key)
             print("\nRules:")
             for rule in rule_list:
-                print("\t" + rule._str_())
+                print("\t" + rule.__str__())
         
         elif learn:
             
@@ -576,3 +554,4 @@ if _name_ == "_main_":
             print("\nHaram Command.")
     
         print()
+        
