@@ -1,11 +1,17 @@
-Tugas Sistem Pakar Foward Chain & Backward Chain
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Mar 17 13:12:15 2021
 
+@author: ASUS
+"""
+
+
+#%%Contoh 1 FORWARD CHAINING
 global fact
 global is_changed
+
 is_changed = True
 facts = [["Diam","Sedih"],["Galau","Sedih"],["Ketawa","Senang"]]
-
-Kode di atas untuk mendefinisikan dan menyimpan variable global
 
 def assert_fact(fact):
     global facts
@@ -13,9 +19,6 @@ def assert_fact(fact):
     if not fact in facts:
         facts += [fact]
         is_changed = True
-
-Blok kode di atas adalah sebuah method perulangan untuk menyimpan fakta fakta baru
-
 
 while is_changed:
     is_changed = False
@@ -28,8 +31,19 @@ while is_changed:
             assert_fact(["Murung",A1[1]])
 print("FowardChain")
 print(facts)
+#%%Contoh 2 BACKWARD CHAINING
+global fact
+global is_changed
 
-Blok diatas adalah fungsi untuk melooping aturan aturan yang ditetapkan untuk menentukan fakta baru dengan metode Foward Chain kemudian menampilkan fakta tersebut
+is_changed = True
+facts = [["Diam","Sedih"],["Galau","Sedih"],["Ketawa","Senang"]]
+
+def assert_fact(fact):
+    global facts
+    global is_changed
+    if not fact in facts:
+        facts += [fact]
+        is_changed = True
 
 while is_changed:
     is_changed = False
@@ -43,5 +57,3 @@ while is_changed:
         
 print("BackwardChain")     
 print(facts)
-
-Blok diatas adalah fungsi untuk melooping aturan aturan yang ditetapkan untuk menentukan fakta baru dengan metode Backward Chain kemudian menampilkan fakta tersebut
