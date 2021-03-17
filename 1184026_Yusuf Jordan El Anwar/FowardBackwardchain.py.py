@@ -1,8 +1,9 @@
-# Tugas 1 Sistem Pakar
-Tugas Sistem Pakar Foward Chain  & Backward Chain
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 13 08:57:28 2021
 
-Aturan yang digunakan
-```
+@author: Yusuf Jordan El Anwar
+"""
 # Rules
 
 # mamalia (A) ==> bertulang belakang (A).
@@ -11,18 +12,14 @@ Aturan yang digunakan
 # bertulang belakang ("bebek").
 # terbang ("bebek").
 # mamalia ("Kucing").
-```
 
-```
+#FowardChain
 global facts
 global is_changed
+
 is_changed = True
 facts = [["bertulang belakang","bebek"],["terbang","bebek"],["mamalia","kucing"]]
 
-```
-Kode di atas untuk mendefinisikan dan menyimpan variable global
-
-```
 def assert_fact(fact):
     global facts
     global is_changed
@@ -30,10 +27,6 @@ def assert_fact(fact):
         facts += [fact]
         is_changed = True
 
-```
-Blok kode di atas adalah sebuah method perulangan untuk menyimpan fakta fakta baru
-
-```
 while is_changed:
     is_changed = False
     for A1 in facts:
@@ -46,10 +39,20 @@ while is_changed:
 
 print("FowardChain")
 print(facts)
-```
-Blok diatas adalah fungsi untuk melooping aturan aturan yang ditetapkan untuk menentukan fakta baru dengan metode Foward Chain kemudian menampilkan fakta tersebut
 
-```
+#Backwardchain
+
+
+is_changed = True
+facts = [["bertulang belakang","bebek"],["terbang","bebek"],["mamalia","kucing"]]
+
+def assert_fact(fact):
+    global facts
+    global is_changed
+    if not fact in facts:
+        facts += [fact]
+        is_changed = True
+
 while is_changed:
     is_changed = False
     for A1 in facts:
@@ -62,5 +65,4 @@ while is_changed:
         
 print("BackwardChain")
 print(facts)
-```
-Blok diatas adalah fungsi untuk melooping aturan aturan yang ditetapkan untuk menentukan fakta baru dengan metode Backward Chain kemudian menampilkan fakta tersebut
+
