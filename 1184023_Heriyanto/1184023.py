@@ -1,10 +1,9 @@
+#%%Contoh 1 FORWARD CHAINING
 global fact
 global is_changed
 
 is_changed = True
 facts = [["Action","Genre"],["Romance","Genre"],["School","Film"]]
-
-facts sebagai variabel global
 
 def assert_fact(fact):
     global facts
@@ -12,8 +11,6 @@ def assert_fact(fact):
     if not fact in facts:
         facts += [fact]
         is_changed = True
-
-sebuah class yang berupa method perulangan dan menyimpan data baru
 
 while is_changed:
     is_changed = False
@@ -24,8 +21,21 @@ while is_changed:
             assert_fact(["Thriller",A1[1]])
         if A1[0] == "Action" and ["Sadistic",A1[1]] in facts:
             assert_fact(["Surprise",A1[1]])
+print("FowardChain")
+print(facts)
+#%%Contoh 2 BACKWARD CHAINING
+global fact
+global is_changed
 
-method perulangan yang membuat fakta baru dengan metode forward chain
+is_changed = True
+facts = [["Action","Genre"],["Romance","Genre"],["School","Film"]]
+
+def assert_fact(fact):
+    global facts
+    global is_changed
+    if not fact in facts:
+        facts += [fact]
+        is_changed = True
 
 while is_changed:
     is_changed = False
@@ -39,49 +49,37 @@ while is_changed:
         
 print("BackwardChain")     
 print(facts)
-
-method perulangan yang membuat fakta baru dengan metode backward chain
-
+#%%
 from mal import AnimeSearch
 
-memanggil module AnimeSearch dari library mal
+print("+---------------------------------+")
+print("|\tSelamat Datang di Info Anime\t |")
+print("|\t\t\tBy Heriyanto\t\t\t |")
+print("+---------------------------------+")
 
 nama=input("Masukan Nama Anda : ")
-
-variabel nama yang meminta user untuk memasukkan nama
-
 pilihan=input("\nHi, "+nama+". Apakah Anda ingin melihat info anime? (y/n) : ")
-
-variabel pilihan yang meminta user untuk memasukkan boolean yes atau no
 
 while pilihan == "y":
     print("Masukkan Judul Anime yang ingin Anda Cari")
     print("Contoh : Naruto Shippuden\n")
-
-jika pilihan yes lanjut ke method search
-
-search = AnimeSearch(input("Judul : "))
-
-variabel search yang meminta user untuk memasukkan judul anime
-
+    
+    search = AnimeSearch(input("Judul : "))
     print(search.results[0].title) 
     print(search.results[0].score)
     print(search.results[0].mal_id)
     print(search.results[0].episodes)
     print(search.results[0].url)
 
-mencetak title, score, mal id, episodes, dan url dari judul anime yang dimasukkan
+    pilihan=input("\nHi, "+nama+". Mau lihat info lagi? (y/n) : ")
 
-pilihan=input("\nHi, "+nama+". Mau lihat info lagi? (y/n) : ")
-
-setelah user mendapat info anime, user di minta apakah masih ingin melihat atau tidak
-
-if pilihan=="y":
-
-jika pilih yes akan mengulang method dari awal
+    if pilihan=="y":
+        print("+---------------------------------+")
+        print("|\tSelamat Datang di Info Anime\t |")
+        print("|\t\t\tBy Heriyanto\t\t\t |")
+        print("+---------------------------------+")
 
     else:
         print("\n+----------------------Terima Kasih------------------------+")
         print("+--------------Telah Berkunjung di Info Anime--------------+")
-
-jika pilih no, akan muncul pesan terima kasih
+    
